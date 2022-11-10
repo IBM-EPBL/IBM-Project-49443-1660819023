@@ -1,0 +1,41 @@
+<?php// include("include/config.php");?>
+<?php include("include/header.php");?>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script src="js/bootstrap.min.js"></script>
+
+
+
+
+    <div style="margin: 50px 0px 50px 0px ; border: 2px solid black;">
+  <a href="index.php"><li>  Home </li> </a>
+  <a href="donor.php"><li class='active'>  Donors  </li></a>
+  <a href="registration.php" target="_blank"><li> Register </li> </a>
+  <a href="rules.php"><li> Rules  </li> </a>
+  <a href="login.php"><li>  Login   </li></a>
+</ul>
+<center>
+<h1> Donor Profile </h1>
+<?php $sql="select * from user where id='$_REQUEST[id]' ";
+$res=mysql_query($sql);
+$arr=mysql_fetch_array($res);
+?>
+
+<tr>
+<td><img src="data:data:image/jpeg;base64,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//2Q==" height="150" width="180" style="border:2px solid black;" alt="Donor's Picture"></td>
+<td></td>
+</br></br>
+</tr>
+<table style="text-align: center; margin: 15px 0px 0px 0px; font-family: times new roman; font-size: 18px" class="table table-hover">
+<input type="text" name="Name" placeholder="Name" required /><br>
+<input type="text" name="Name" placeholder="Father Name" required /><br>
+<input type="text" name="Name" placeholder="Mother Name" required /><br>
+<input type="text" name="Name" placeholder="Age" required /><br>
+<input type="text" name="Name" placeholder="Gender" required /><br>
+<input type="text" name="Name" placeholder="Mobile No" required /><br>
+<input type="text" name="Name" placeholder="Email" required /><br>
+<input type="text" name="Name" placeholder="Already a donor?" required /><br>
+</table>
+ <button type="submit" class="btn btn-primary" id="button_registration_submit">Submit</button>
+</div>
+</center>
+Footer
